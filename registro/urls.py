@@ -12,6 +12,7 @@ urlpatterns = patterns('',
     url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {
         'document_root': settings.MEDIA_ROOT,
     }),
+    # Definiendo la url que va a servir los archivos/documentos para que puedan ser descargados luego de filtrar.
     url(r'^busqueda/media/(?P<path>.*)$', 'django.views.static.serve', {
         'document_root': settings.MEDIA_ROOT,
     }),

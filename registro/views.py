@@ -36,10 +36,16 @@ class List_files(ListView):
 
 
 def buscar(request):
+    """
+    Función que muestra la plantilla con el formulario de búsqueda.
+    """
     return render(request, 'registro/buscar.html')
 
 
 def busqueda(request):
+    """
+    Función que permite hacer el query con los objetos ya filtrados.
+    """
     if 'q' in request.GET and request.GET['q']:
         q = request.GET['q']
         documents = Document.objects.filter(description__icontains=q)
